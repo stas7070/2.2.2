@@ -11,13 +11,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class CarServiceImpl implements CarService {
-
-    private final CarDao carDao;
     private List<Car> cars = CarDaoImpl.cars;
-    @Autowired
-    public CarServiceImpl(CarDao carDao) {
-        this.carDao = carDao;
-    }
     @Override
     public List<Car> getCars(int count) {
         if (count == 0 || count > 5) {
