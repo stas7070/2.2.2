@@ -19,4 +19,9 @@ public class CarDaoImpl implements CarDao {
         cars.add(new Car(4, "Ford", 500));
         cars.add(new Car(5, "Gas", 4));
     }
+
+    public static List<Car> getCars() {
+        List<Car> carList = cars;
+        return carList;
+    }
 }
