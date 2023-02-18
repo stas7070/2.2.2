@@ -6,6 +6,7 @@ import web.dao.CarDao;
 import web.dao.CarDaoImpl;
 import web.model.Car;
 
+import java.sql.SQLOutput;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,6 +20,8 @@ public class CarServiceImpl implements CarService {
     public List<Car> countCars(int count) {
         if (count == 0 || count > 5) {
             return carDao.getCars();
+        } else if (count < 0) {
+            return null;
         }
         return carDao.getCars().stream().limit(count).collect(Collectors.toList());
     }
